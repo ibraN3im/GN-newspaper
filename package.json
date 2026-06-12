@@ -1,4 +1,10 @@
 {
+  "private": true,
+  "workspaces": [
+    "Ghalaba-backend",
+    "Ghalaba-frontend",
+    "Ghalaba-admin-panel"
+  ],
   "dependencies": {
     "cloudinary": "2.10.0"
   }
