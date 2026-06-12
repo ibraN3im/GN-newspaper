@@ -3,8 +3,9 @@ services:
     name: galaba-backend
     env: node
     plan: free
+    rootDir: Ghalaba-backend
     buildCommand: npm install
-    startCommand: npm start
+    startCommand: node server.js
     envVars:
       - key: NODE_ENV
         value: production
