@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
         });
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -55,7 +55,7 @@ router.post('/', protect, async (req, res) => {
         res.status(201).json(media);
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -74,7 +74,7 @@ router.delete('/:id', protect, async (req, res) => {
         res.json({ message: 'Media removed' });
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 

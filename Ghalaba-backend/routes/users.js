@@ -14,7 +14,7 @@ router.get('/', protect, adminOnly, async (req, res) => {
         res.json(users);
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -32,7 +32,7 @@ router.get('/:id', protect, adminOnly, async (req, res) => {
         res.json(user);
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -67,7 +67,7 @@ router.post('/', protect, adminOnly, async (req, res) => {
         });
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -101,7 +101,7 @@ router.put('/:id', protect, adminOnly, async (req, res) => {
         res.json(user);
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -120,7 +120,7 @@ router.delete('/:id', protect, adminOnly, async (req, res) => {
         res.json({ message: 'User removed' });
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 

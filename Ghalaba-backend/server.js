@@ -21,7 +21,12 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: ['http://localhost:5174', 'http://localhost:3000', 'http://localhost:5173', 'https://al-galaba.netlify.app'],
+    origin: [
+        'http://localhost:5174',
+        'http://localhost:3000',
+        'https://alqalaba-back-end.onrender.com',
+        'https://gn-gamma.vercel.app'
+    ],
     credentials: true
 }));
 app.use(express.json());
@@ -55,7 +60,7 @@ app.use('/api/stats', statsRoutes);
 
 // Health check route
 app.get('/api/health', (req, res) => {
-    res.json({ status: 'OK', message: 'Galaba API is running' });
+    res.json({ status: 'OK', message: 'GN API is running' });
 });
 
 // Error handling middleware

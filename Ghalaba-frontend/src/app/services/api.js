@@ -13,10 +13,19 @@ class ApiService {
 
         try {
             const response = await fetch(url, config);
-            const data = await response.json();
+            let data;
+
+            try {
+                data = await response.json();
+            } catch {
+                data = null;
+            }
 
             if (!response.ok) {
-                throw new Error(data.message || 'Request failed');
+                const serverMessage = data?.message || data?.error || response.statusText || 'Request failed';
+                const error = new Error(serverMessage);
+                error.status = response.status;
+                throw error;
             }
 
             return data;

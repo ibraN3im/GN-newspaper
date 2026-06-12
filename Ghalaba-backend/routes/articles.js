@@ -49,7 +49,7 @@ router.get('/', async (req, res) => {
         });
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -64,7 +64,7 @@ router.get('/latest', async (req, res) => {
             .limit(parseInt(limit));
         res.json(articles);
     } catch (error) {
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -79,7 +79,7 @@ router.get('/popular', async (req, res) => {
             .limit(parseInt(limit));
         res.json(articles);
     } catch (error) {
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -101,7 +101,7 @@ router.get('/:slug', async (req, res) => {
         res.json(article);
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -143,7 +143,7 @@ router.post('/', protect, async (req, res) => {
         res.status(201).json(article);
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -184,7 +184,7 @@ router.put('/:id', protect, async (req, res) => {
         res.json(article);
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -213,7 +213,7 @@ router.delete('/:id', protect, async (req, res) => {
         res.json({ message: 'Article removed' });
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 

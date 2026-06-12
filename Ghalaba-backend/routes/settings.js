@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
         res.json(settings);
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -53,7 +53,7 @@ router.put('/', protect, async (req, res) => {
         res.json(settings);
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 

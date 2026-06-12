@@ -54,7 +54,7 @@ router.get('/dashboard', protect, async (req, res) => {
         });
     } catch (error) {
         console.error('Dashboard Stats Error:', error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -74,7 +74,7 @@ router.get('/visitors', async (req, res) => {
         res.json(stats);
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -104,7 +104,7 @@ router.post('/track', async (req, res) => {
         res.json({ success: true });
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
