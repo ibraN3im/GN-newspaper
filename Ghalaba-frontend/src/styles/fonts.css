@@ -1,0 +1,10 @@
+/* Google Fonts for Arabic and English support */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  font-family: 'Inter', 'Noto Kufi Arabic', system-ui, -apple-system, sans-serif;
+}
+
+html[lang="ar"] * {
+  font-family: 'Noto Kufi Arabic', 'Inter', system-ui, -apple-system, sans-serif;
+}

@@ -1,0 +1,36 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+.card-shadow {
+    box-shadow: 0 0 1px 0px gray;
+}
+
+h1,
+h3,
+footer h4 {
+    color: #FF5722;
+}
+
+.logo {
+    border-bottom: 7px solid #8bc34a;
+    border-left: 4px solid #8bc34a;
+    border-right: 4px solid #8bc34a;
+
+}
+
+/* Mobile responsive utilities */
+@media (max-width: 640px) {
+    p {
+        font-size: 12px;
+    }
+
+    .disc-lable {
+        font-size: 8px;
+        letter-spacing: -0.5px;
+    }
+
+    footer a {
+        font-size: 12px;
+    }
+}
