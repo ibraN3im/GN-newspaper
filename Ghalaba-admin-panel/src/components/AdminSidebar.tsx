@@ -48,7 +48,7 @@ export function AdminSidebar() {
   };
 
   return (
-    <aside className="w-full md:w-48 bg-gray-900 text-white flex flex-col md:min-h-screen">
+    <aside className="side-bar w-full md:w-48 bg-gray-900 text-white flex flex-col md:min-h-screen">
       <div className="p-4 md:p-6 border-b border-gray-800">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-gradient-to-br from-red-600 to-red-800 rounded-lg flex items-center justify-center flex-shrink-0">
