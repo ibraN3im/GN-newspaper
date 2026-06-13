@@ -19,16 +19,39 @@ connectDB().catch(err => {
 
 const app = express();
 
-// Middleware
-app.use(cors({
-    origin: [
-        'http://localhost:5174',
-        'http://localhost:3000',
-        'https://alqalaba-back-end.onrender.com',
-        'https://gn-gamma.vercel.app'
-    ],
+// CORS configuration
+const allowedOrigins = [
+    'http://localhost:5173',
+    'http://localhost:5174',
+    'http://localhost:3000',
+    'http://localhost:3009',
+    'https://ghalaba-admins-panel.vercel.app',
+    'https://gn-gamma.vercel.app',
+    'https://al-galaba.vercel.app',
+];
+
+const corsOptions = {
+    origin: function (origin, callback) {
+        // Allow requests with no origin (mobile apps, curl, etc.)
+        if (!origin) return callback(null, true);
+
+        // Check exact match
+        if (allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        }
+
+        // Allow any Vercel deployment (*.vercel.app)
+        if (/\.vercel\.app$/.test(origin)) {
+            return callback(null, true);
+        }
+
+        callback(null, false);
+    },
     credentials: true
-}));
+};
+
+// Middleware
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
