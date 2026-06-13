@@ -10,7 +10,13 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
+.side-bar {
+  max-height: fit-content;
+  z-index: 11;
+  position: sticky;
+  top: 0;
+  bottom: 0;
+}
 /* Mobile responsive utilities */
 @media (max-width: 640px) {
   .sidebar-mobile {
